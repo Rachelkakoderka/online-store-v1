@@ -1,3 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --black: #150605;
+    --red: #c02a22;
+    --blue: #6eb3f4;
+    --violet: #a731dd;
+}
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .App {
   text-align: center;
 }
+
+header {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--blue);
+    color: var(--black);
+    padding: 0 10px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
+    -moz-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
+    box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
+}
+header h1 {
+  margin-right: auto;
+}
+
+header a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited { color: var(--black); }
+a:hover { color: var(--black); }
+a:active { color: var(--black); }
