@@ -1,15 +1,28 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 
-const {Provider, Consumer} = createContext("");
+const StoreContext = createContext("");
+
 
 function StoreContextProvider(props) {
+
+  
+
+    const [products, setProducts] = useState([]);
+    
+    const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json";
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+    
     return (
-        <Provider value="">
+        <StoreContext.Provider value={{products}}>
             {props.children}
-        </Provider>
+        </StoreContext.Provider>
     )
 }
 
 
 
-export {StoreContextProvider, Consumer as StoreContextConsumer};
+export {StoreContextProvider, StoreContext};

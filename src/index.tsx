@@ -11,6 +11,7 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider} from "react-router-dom"
+  import { StoreContextProvider } from './storeContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

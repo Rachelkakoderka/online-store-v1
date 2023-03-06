@@ -9,14 +9,10 @@ function App() {
 
   return (
       <StoreContextProvider>
-        {
-        () => (
           <div className="App">
             <Header />
             <Outlet />
           </div>
-        )
-        }
           
       </StoreContextProvider>
       
