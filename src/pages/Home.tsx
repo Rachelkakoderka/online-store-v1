@@ -8,10 +8,7 @@ import hat5 from "../assets/hat-5.jpg"
 import hat6 from "../assets/hat-6.jpg"
 import hat7 from "../assets/hat-7.jpg"
 
-import {RiHeartLine} from "react-icons/ri" 
-import {RiHeartFill} from "react-icons/ri"
-import {BsCartPlus} from "react-icons/bs"
-import {BsCartXFill} from "react-icons/bs"
+import Card from "../components/Card"
 
 
 
@@ -21,24 +18,10 @@ const Home = () => {
 
     const images = [hat1, hat2, hat3, hat4, hat5, hat6, hat7, hat1, hat2, hat3, hat4, hat5, hat6, hat7]
 
-    const productCardElems = products.map((hat, index) => 
-        <div id={hat.id} className="card stacked">
-                    <img className="card__img" src={images[index]} alt={hat.title} />
-                    <div className="card__content">
-                        <div className="card__details">
-                            <h2 className="card__title"> {hat.title}</h2>
-                            <p className="card_price">{hat.price} {hat.currency}</p>
-                            <p className="card__description"> {hat.description}</p>    
-                        </div>
-                        <div className="card_actions"><RiHeartLine /><BsCartPlus/></div>
-                    </div>
-                </div>
-        )
+   
+    const productCardElems = products.map((hat, index) => <Card key={index} product={hat} src={images[index]} />)
 
-    const emptyHeartIcon = <i className="ri-heart-line"></i>
-    const fullHeartIcon = <i className="ri-heart-fill"></i>
-
-
+    
     return (
     <>
         <div className="container">

@@ -3,7 +3,10 @@ import React from "react"
 
 const Login = () => {
     return (
-        <div>Please Log in</div>
+        <div className="login__container">
+
+
+        </div>
     )
 }
 
