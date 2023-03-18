@@ -29,7 +29,7 @@ export default function Card(props :Props) {
     
     const isFavourite = favouriteProducts.includes(product.id)
     const isInCart = cart.includes(product.id)
-    console.log(isFavourite)
+   
 
     const heartIcon = isFavourite ?
     <span onClick={() => dispatch(removeFromFavorite(product.id))}>
