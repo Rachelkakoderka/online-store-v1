@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToFavorite, removeFromFavorite } from '../redux'
+import { addToCart, addToFavorite, removeFromCart, removeFromFavorite } from '../redux'
 
 import {RiHeartLine} from "react-icons/ri" 
 import {RiHeartFill} from "react-icons/ri"
@@ -20,11 +20,11 @@ product: HatInterf
 export default function Card(props :Props) {
     const {product, src} = props;
 
-    const [isHovered, setIsHovered] = useState<boolean>(false);
     const dispatch = useDispatch()
+    const cart:[string] = useSelector((store : StoreInterf) => store.itemsInCart);
     const favouriteProducts: [string] = useSelector((store : StoreInterf) => store.favouriteProducts);
-    const store = useSelector(store => store)
-    const cart = useSelector((store : StoreInterf) => store.itemsInCart);
+   
+
     
     
     const isFavourite = favouriteProducts.includes(product.id)
@@ -38,8 +38,8 @@ export default function Card(props :Props) {
     <RiHeartLine className="card__actions_icon" /></span>
 
     const cartIcon =  isInCart ?
-        <span onClick={() => console.log("removed from cart")}><BsCartXFill className='card__actions_icon'/> </span> :
-        <span onClick={() => console.log("added to cart")}><BsCartPlus className="card__actions_icon" /></span>
+        <span onClick={() =>dispatch(removeFromCart(product.id))}><BsCartXFill className='card__actions_icon'/> </span> :
+        <span onClick={() => dispatch(addToCart(product.id))}><BsCartPlus className="card__actions_icon" /></span>
 
 
   return (

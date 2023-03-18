@@ -48,6 +48,15 @@ function reducer(state = initialState, action ) {
            return  { ...state,
                 favouriteProducts: state.favouriteProducts.filter(x => x !== action.payload)
             }
+        case "ADD_TO_CART":
+           return  state.itemsInCart.includes(action.payload) ?  state : {
+                ...state,
+                itemsInCart: [...state.itemsInCart, action.payload]
+            }
+        case "REMOVE_FROM_CART":
+           return  { ...state,
+                itemsInCart: state.itemsInCart.filter(x => x !== action.payload)
+            }
         default:
             return state
     }
