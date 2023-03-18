@@ -137,6 +137,10 @@ nav {
   font-size: 2rem;
   padding : 0 20px;
   cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.nav__icons:hover {
+  transform: scale(1.4);
 }
 
 .stacked {
@@ -201,8 +205,13 @@ padding-inline: 2rem;
   justify-content: space-around;
 }
 
-.card__actions_icons {
+.card__actions_icon {
   font-size: 1.3rem;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+.card__actions_icon:hover {
+  transform: scale(1.4);
 }
 
 @media (min-width: 60em) {

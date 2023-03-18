@@ -33,13 +33,13 @@ export default function Card(props :Props) {
 
     const heartIcon = isFavourite ?
     <span onClick={() => dispatch(removeFromFavorite(product.id))}>
-        <RiHeartFill className="card__actions_icons" /></span> :
+        <RiHeartFill className="card__actions_icon" /></span> :
     <span onClick={() => dispatch(addToFavorite(product.id))}>
-    <RiHeartLine className="card__actions_icons" /></span>
+    <RiHeartLine className="card__actions_icon" /></span>
 
     const cartIcon =  isInCart ?
-        <span onClick={() => console.log("removed from cart")}><BsCartXFill className='card__actions_icons'/> </span> :
-        <span onClick={() => console.log("added to cart")}><BsCartPlus className="card__actions_icons" /></span>
+        <span onClick={() => console.log("removed from cart")}><BsCartXFill className='card__actions_icon'/> </span> :
+        <span onClick={() => console.log("added to cart")}><BsCartPlus className="card__actions_icon" /></span>
 
 
   return (
