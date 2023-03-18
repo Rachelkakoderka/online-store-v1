@@ -1,18 +1,29 @@
 import React from "react"
 import {NavLink, Link} from "react-router-dom"
 import { RiShoppingBasket2Line } from "react-icons/ri"
+import { RiAccountPinBoxLine } from "react-icons/ri";
+
+import { IconContext } from "react-icons";
+
 
 
 const Header = () => {
+
+    const iconStyle =  {color: "black" } 
+
     return (
         <>
         <header className="app-header">
-            
-            <NavLink to="/"><h1>myStore</h1></NavLink>
+            <div></div>
+            <NavLink to="/"><h1>myHatStore</h1></NavLink>
             <nav>
-                <NavLink to="account">Account</NavLink>
-                <NavLink to="cart">Cart</NavLink>
-
+                <IconContext.Provider value={iconStyle}>
+                    <NavLink className="nav__icons" to="account">< RiAccountPinBoxLine /></NavLink>
+                </IconContext.Provider>
+                
+                <IconContext.Provider value={iconStyle}>
+                    <NavLink className="nav__icons" to="cart">< RiShoppingBasket2Line /></NavLink>
+                </IconContext.Provider>
             </nav>
             
         </header>

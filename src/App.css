@@ -90,18 +90,18 @@ html, body {
 }
 
 .App {
-  
+  text-align: center;
  
 }
 
 header {
-    display: flex;
-    justify-content:space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
     gap: 16px;
     align-items: center;
     background-color: var(--blue);
     color: var(--black);
-    padding: 0 2em;
+    padding: 1em 5em;
     margin: 0em auto 2em;
     -webkit-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
     -moz-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
@@ -125,8 +125,22 @@ a:visited { color: var(--black); }
 a:hover { color: var(--black); }
 a:active { color: var(--black); }
 
+header > * {
+  
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+}
+.nav__icons {
+  font-size: 2rem;
+  padding : 0 20px;
+}
+
 .stacked {
   display: grid;
+  text-align: left;
 }
 
 .stacked > * {
@@ -151,7 +165,6 @@ padding-inline: 2rem;
 }
 
 .card__content {
-  z-index: 10;
   align-self: end;
   margin: 0.5rem 0.5rem 2rem;
   padding: 0.5rem;
@@ -164,6 +177,9 @@ padding-inline: 2rem;
   object-fit: cover;
 }
 .card__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background: white;
   align-self: end;
   margin: 0.5rem;
