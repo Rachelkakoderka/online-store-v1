@@ -4,14 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Products from './pages/Products';
+import Products from './pages/Home';
 import Cart from './pages/Cart';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider} from "react-router-dom"
-  import { StoreContextProvider } from './storeContext';
+import Login from './components/Login';
+import AccDetails from './components/AccDetails';
+import Account from './pages/Account';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,13 +24,11 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
           <Route index element={<Products />} />
           <Route path="cart" element={<Cart />} />
-          {/* 
-          do dodania w przyszłości
-          <Route path="help">
-            <Route path='faq' element={<Faq />} />
-            <Route path='contact' element={<Contact />} />
-
-          </Route> */}
+          
+          <Route path="account" element={<Account />}>
+            <Route path='login' element={<Login />} />
+            <Route path='accdetails' element={<AccDetails />} />
+          </Route>
     </Route>
      
   )
