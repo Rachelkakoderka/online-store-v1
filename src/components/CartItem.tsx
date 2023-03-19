@@ -11,7 +11,7 @@ export default function CartItem(props : Props) {
   const {id} = props
 
   const cartItem = products.find(x => x.id === id);
-  console.log(cartItem)
+  //console.log(cartItem)
 
 
   return (

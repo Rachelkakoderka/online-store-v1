@@ -264,3 +264,8 @@ padding-inline: 2rem;
 .cart__item__title {
   margin-left: 1em;
 }
+.cart__total {
+  margin-block: 1em;
+  display: flex;
+  justify-content: space-between;
+}
