@@ -229,3 +229,38 @@ padding-inline: 2rem;
     font-size: 1.75rem;
   }
 }
+
+.cart__container {
+  max-width: 50vw;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.cart__elements {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25em;
+}
+
+.cart__item__img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.cart__item__details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.cart__item__title {
+  margin-left: 1em;
+}
