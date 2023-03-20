@@ -31,7 +31,10 @@ export default function CartItem(props : Props) {
       
       <div className='cart__item__details'>
         <div className='cart__item__box'>
-          {deleteIcon}
+          <div onMouseEnter={() => setIsHovered(true)}
+               onMouseLeave={() => setIsHovered(false)}>
+            {deleteIcon}
+          </div>
           <img className='cart__item__img' src={cartItem?.imgSrc} alt={cartItem?.title} width="100px"/>
         </div>
         <p className='cart__item__title'>{cartItem?.title}</p>
