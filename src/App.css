@@ -267,5 +267,22 @@ padding-inline: 2rem;
 .cart__total {
   margin-block: 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.cart__total h2:first-child {
+ margin-right: 1em;
+}
+
+.cart__counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.place_order__btn {
+  max-width: fit-content;
+}
+.place_order__btn{
+  margin-inline: auto;
+  padding: 1em;
 }
