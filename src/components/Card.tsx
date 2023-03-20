@@ -33,7 +33,7 @@ export default function Card(props :Props) {
 
     const heartIcon = isFavourite ?
     <span onClick={() => dispatch(removeFromFavorite(product.id))}>
-        <RiHeartFill className="card__actions_icon" /></span> :
+        <RiHeartFill className="card__actions_icon full_heart" /></span> :
     <span onClick={() => dispatch(addToFavorite(product.id))}>
     <RiHeartLine className="card__actions_icon" /></span>
 

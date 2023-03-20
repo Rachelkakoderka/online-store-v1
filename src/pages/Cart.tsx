@@ -33,20 +33,27 @@ const Cart = () => {
     return (
         <div className="cart__container">
             <div className="cart__elements">
-                {cart.length ? cartItemElems : "Your cart is empty"}
                 { cart.length > 0 ?
+                <>
+                    <div>
+                       {cartItemElems}
+                    </div>
                     <div className="cart__counter">
                         <div className="cart__total">
                             <h2>Razem:</h2>
                             <h2>{totalCost()} PLN</h2>
                         </div>
-                        {/* //<div className="place_order__container"></div> */}
-                        <button className="place_order__btn">
-                            Złóż zamówienie
+                        <button className="place_order__btn" >
+                            <h4>ZAMAWIAM</h4>
                         </button>
-                    
                     </div>
-                : ""
+                
+                </>
+                : 
+                <p>
+                    Twój koszyk jest pusty
+                </p>
+        
                 }
                 
                 
