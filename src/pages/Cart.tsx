@@ -66,10 +66,13 @@ const Cart = () => {
                     </div>
                 
                 </>
-                : 
-                <p>
-                    {cartDefaultText}
-                </p>
+                :
+                <div>
+                    <p>
+                        {cartDefaultText}
+                    </p>
+                    {/* <button className="btn"> Zobacz nasze produkty</button> */}
+                </div> 
                 }
                 
                 

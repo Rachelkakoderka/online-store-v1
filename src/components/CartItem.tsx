@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {removeFromCart} from "../redux"
+import {addToFavorite, removeFromCart, removeFromFavorite} from "../redux"
 import products from '../assets/products'
-import {RiDeleteBin6Fill} from "react-icons/ri"
+import {RiDeleteBin6Fill, RiHeartFill, RiHeartLine} from "react-icons/ri"
 import { RiDeleteBin6Line } from "react-icons/ri"
 import { StoreInterf } from '../Interfaces'
 
@@ -27,6 +27,12 @@ export default function CartItem(props : Props) {
     : 
     <span onClick={() =>dispatch(removeFromCart(id))}><RiDeleteBin6Line className='cart__item_delete'/></span>
 
+    const heartIcon = isHovered ? 
+    <span onClick={() => dispatch(removeFromFavorite(id))}>
+    <RiHeartLine className="icon" /></span> :
+    <span onClick={() => dispatch(removeFromFavorite(id))}>
+        <RiHeartFill className="icon full_heart" /></span>
+
   return (
     <div className='cart__item'>
       
@@ -34,7 +40,7 @@ export default function CartItem(props : Props) {
         <div className='cart__item__box'>
           <div onMouseEnter={() => setIsHovered(true)}
                onMouseLeave={() => setIsHovered(false)}>
-            { isCart ? deleteIcon : ""}
+            { isCart ? deleteIcon : heartIcon}
           </div>
           <img className='cart__item__img' src={cartItem?.imgSrc} alt={cartItem?.title} width="100px"/>
         </div>

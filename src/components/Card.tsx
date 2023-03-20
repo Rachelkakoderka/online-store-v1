@@ -48,7 +48,7 @@ export default function Card(props :Props) {
             <div className="card__content">
                 <div className="card__details">
                     <h2 className="card__title"> {product.title}</h2>
-                    <p className="card_price">{product.price} {product.currency}</p>
+                    <p className="card__price">{product.price} {product.currency}</p>
                     <p className="card__description"> {product.description}</p>    
                 </div>
                 <div className="card__actions">

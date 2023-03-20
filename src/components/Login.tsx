@@ -14,10 +14,10 @@ const Login = () => {
     return (
         <div className="login__container">
             <div className="login__input__box">
-                <label>Username: </label>
+                <label>Login: </label>
                 <input 
                     type="text" 
-                    placeholder="Enter Username" 
+                    placeholder="Wpisz swój login" 
                     name="login" 
                     required 
                     onChange={(e) => dispatch(addLogin(e.target.value))}
@@ -26,10 +26,10 @@ const Login = () => {
             </div>
             
             <div className="login__input__box">
-                <label>Password: </label>
+                <label>Hasło: </label>
                 <input 
                     type="password" 
-                    placeholder="Enter Password" 
+                    placeholder="Wpisz swoje hasło" 
                     name="password" 
                     required
                     onChange={(e) => dispatch(addPassword(e.target.value))}
@@ -39,7 +39,7 @@ const Login = () => {
             </div>
             
                 <button type="submit" className="login__btn btn" onClick={() => {                    
-                    dispatch(logIn())}}><h4>LOGIN</h4></button>       
+                    dispatch(logIn())}}><h4>ZALOGUJ SIĘ</h4></button>       
             
         </div>
     )
