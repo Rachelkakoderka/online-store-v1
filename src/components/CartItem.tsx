@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import {addToFavorite, removeFromCart, removeFromFavorite} from "../redux"
+import {useState} from 'react'
+import { useDispatch } from 'react-redux'
+import { removeFromCart, removeFromFavorite} from "../redux"
 import products from '../assets/products'
 import {RiDeleteBin6Fill, RiHeartFill, RiHeartLine} from "react-icons/ri"
 import { RiDeleteBin6Line } from "react-icons/ri"
-import { StoreInterf } from '../Interfaces'
 
 
 interface Props {
@@ -18,8 +17,7 @@ export default function CartItem(props : Props) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const cartItem = products.find(x => x.id === id);
-  //console.log(cartItem)
-  const cart : string[] = useSelector((store : StoreInterf)  => store.itemsInCart)
+
   const dispatch = useDispatch()
 
   const deleteIcon = isHovered ? 

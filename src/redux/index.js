@@ -1,5 +1,5 @@
-import { act } from "react-dom/test-utils"
-import redux, {createStore} from "redux"
+
+import {createStore} from "redux"
 
 export function addToFavorite(id) {
    // console.log(id)

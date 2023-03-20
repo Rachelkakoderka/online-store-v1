@@ -134,7 +134,7 @@ header > * {
 
 nav {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .nav__icons {
   font-size: 2em;

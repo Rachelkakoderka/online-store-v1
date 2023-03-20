@@ -2,10 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { StoreInterf } from "../Interfaces";
 import CartItem from "../components/CartItem";
 import products from "../assets/products";
-import { HatInterf } from "../Interfaces";
 import { emptyCart } from "../redux";
-import { execPath } from "process";
-import { DefaultContext } from "react-icons";
 import { useState } from "react";
 
 
