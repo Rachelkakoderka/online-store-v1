@@ -38,7 +38,7 @@ const Cart = () => {
         setTimeout( () =>
         { 
             dispatch(emptyCart());
-            //("Twoje zamówienie zostało złożone. Dziękujemy")
+            setCartDefaultText("Twoje zamówienie zostało złożone. Dziękujemy!")
         }, 2000
         )
     } 
@@ -68,7 +68,7 @@ const Cart = () => {
                 </>
                 : 
                 <p>
-                    cartDefaultText
+                    {cartDefaultText}
                 </p>
                 }
                 
