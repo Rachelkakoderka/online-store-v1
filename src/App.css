@@ -266,6 +266,7 @@ padding-inline: 2rem;
 .cart__item_delete{
   font-size: 2em;
   margin-right: 1em;  
+  cursor: pointer;
 }
 
 .cart__item__details {

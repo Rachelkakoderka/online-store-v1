@@ -1,16 +1,23 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { StoreInterf } from "../Interfaces";
 import CartItem from "../components/CartItem";
 import products from "../assets/products";
 import { HatInterf } from "../Interfaces";
+import { emptyCart } from "../redux";
+import { execPath } from "process";
+import { DefaultContext } from "react-icons";
+import { useState } from "react";
 
 
 const Cart = () => {
 
+    //state pulled from Redux store
     const cart:[string] = useSelector((store : StoreInterf) => store.itemsInCart);
-    //console.log(cart)
+    const dispatch = useDispatch();
 
-  const  allItems = cart.map(id => products.find(x => x.id === id))
+    const [cartDefaultText, setCartDefaultText] = useState<string>("Twój koszyk jest pusty");
+    
+    const  allItems = cart.map(id => products.find(x => x.id === id))
                         .map(item => item?.price) 
         
     const totalCost = () : number => {
@@ -24,11 +31,21 @@ const Cart = () => {
         return 0        
     }
     
-    console.log(allItems)
+     
+    
+
+    function placeOrder() {
+        setTimeout( () =>
+        { 
+            dispatch(emptyCart());
+            //("Twoje zamówienie zostało złożone. Dziękujemy")
+        }, 2000
+        )
+    } 
     
 
     const cartItemElems = cart.map(thing => <CartItem key={thing} id={thing}/>)
-    console.log(totalCost)
+   
 
     return (
         <div className="cart__container">
@@ -43,7 +60,7 @@ const Cart = () => {
                             <h2>Razem:</h2>
                             <h2>{totalCost()} PLN</h2>
                         </div>
-                        <button className="place_order__btn" >
+                        <button className="place_order__btn" onClick={placeOrder}  >
                             <h4>ZAMAWIAM</h4>
                         </button>
                     </div>
@@ -51,9 +68,8 @@ const Cart = () => {
                 </>
                 : 
                 <p>
-                    Twój koszyk jest pusty
+                    cartDefaultText
                 </p>
-        
                 }
                 
                 

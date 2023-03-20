@@ -30,6 +30,12 @@ export function removeFromCart(id) {
     }
 } 
 
+export function emptyCart()  {
+    return {
+        type: "EMPTY_CART"
+    }
+}
+
 
 const initialState = {
     favouriteProducts: [],
@@ -56,6 +62,10 @@ function reducer(state = initialState, action ) {
         case "REMOVE_FROM_CART":
            return  { ...state,
                 itemsInCart: state.itemsInCart.filter(x => x !== action.payload)
+            }
+        case "EMPTY_CART":
+           return  { ...state,
+                itemsInCart:[]
             }
         default:
             return state
