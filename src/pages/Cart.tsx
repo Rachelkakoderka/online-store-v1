@@ -44,7 +44,7 @@ const Cart = () => {
     } 
     
 
-    const cartItemElems = cart.map(thing => <CartItem key={thing} id={thing}/>)
+    const cartItemElems = cart.map(thing => <CartItem key={thing} id={thing} isCart={true}/>)
    
 
     return (
@@ -60,7 +60,7 @@ const Cart = () => {
                             <h2>Razem:</h2>
                             <h2>{totalCost()} PLN</h2>
                         </div>
-                        <button className="place_order__btn" onClick={placeOrder}  >
+                        <button className="place_order__btn btn" onClick={placeOrder}  >
                             <h4>ZAMAWIAM</h4>
                         </button>
                     </div>

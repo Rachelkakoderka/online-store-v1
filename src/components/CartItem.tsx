@@ -8,11 +8,12 @@ import { StoreInterf } from '../Interfaces'
 
 
 interface Props {
-    id: string
+    id: string,
+    isCart: boolean
 }
 
 export default function CartItem(props : Props) {
-  const {id} = props
+  const {id, isCart} = props
 
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
@@ -33,7 +34,7 @@ export default function CartItem(props : Props) {
         <div className='cart__item__box'>
           <div onMouseEnter={() => setIsHovered(true)}
                onMouseLeave={() => setIsHovered(false)}>
-            {deleteIcon}
+            { isCart ? deleteIcon : ""}
           </div>
           <img className='cart__item__img' src={cartItem?.imgSrc} alt={cartItem?.title} width="100px"/>
         </div>

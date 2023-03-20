@@ -1,3 +1,4 @@
+import { act } from "react-dom/test-utils"
 import redux, {createStore} from "redux"
 
 export function addToFavorite(id) {
@@ -36,11 +37,33 @@ export function emptyCart()  {
     }
 }
 
+export function addPassword(password) {
+    return {
+        type: "ADD_PASSWORD",
+        payload: password
+    }
+} 
+
+export function addLogin(login) {
+    return {
+        type: "ADD_LOGIN",
+        payload: login
+    }
+} 
+
+export function logIn() {
+    return {
+        type: "LOG_IN",
+    }
+} 
+
 
 const initialState = {
     favouriteProducts: [],
     itemsInCart: [],
-    isLoggedIn: false
+    isLoggedIn: false,
+    login: "",
+    password: ""
 }
 
 function reducer(state = initialState, action ) {
@@ -67,6 +90,19 @@ function reducer(state = initialState, action ) {
            return  { ...state,
                 itemsInCart:[]
             }
+        case "ADD_LOGIN":
+           return  { ...state,
+                    login: action.payload
+            }
+        case "ADD_PASSWORD":
+           return  { ...state,
+                password: action.payload
+            }    
+        case "LOG_IN":
+            
+            return  { ...state,
+                isLoggedIn: true
+            }    
         default:
             return state
     }

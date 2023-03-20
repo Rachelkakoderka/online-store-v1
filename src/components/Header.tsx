@@ -1,5 +1,5 @@
 import React from "react"
-import {NavLink, Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import { RiShoppingBasket2Line } from "react-icons/ri"
 import { RiAccountPinBoxLine } from "react-icons/ri";
 

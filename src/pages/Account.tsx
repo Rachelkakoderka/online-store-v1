@@ -1,18 +1,24 @@
 import React, {useState} from "react"
 import Login from "../components/Login"
 import AccDetails from "../components/AccDetails"
+import { useSelector } from "react-redux"
+import { StoreInterf } from "../Interfaces"
 
 
 
 const Account = () => {
 
-    const [ isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const isLoggedIn = useSelector((store : StoreInterf) => store.isLoggedIn)
+    console.log(isLoggedIn)
 
     return (
-        <>{ 
-            isLoggedIn ? <AccDetails /> :<Login />
+        <div className="account__page">
+            { 
+            isLoggedIn ?
+             <AccDetails /> :
+             <Login />
             }
-        </>
+        </div>
     )
 }
 

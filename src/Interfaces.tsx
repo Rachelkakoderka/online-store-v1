@@ -11,5 +11,7 @@ export interface HatInterf {
 export interface StoreInterf {
     favouriteProducts: [string],
     itemsInCart: [string],
-    isLoggedIn: boolean
+    isLoggedIn: boolean,
+    login: string,
+    password: string
     }
