@@ -1,10 +1,10 @@
-import hat1 from "../assets/hat-1.jpg"
-import hat2 from "../assets/hat-2.jpg"
-import hat3 from "../assets/hat-3.jpg"
-import hat4 from "../assets/hat-4.jpg"
-import hat5 from "../assets/hat-5.jpg"
-import hat6 from "../assets/hat-6.jpg"
-import hat7 from "../assets/hat-7.jpg"
+import hat1 from "./hat-1.jpg"
+import hat2 from "./hat-2.jpg"
+import hat3 from "./hat-3.jpg"
+import hat4 from "./hat-4.jpg"
+import hat5 from "./hat-5.jpg"
+import hat6 from "./hat-6.jpg"
+import hat7 from "./hat-7.jpg"
 
 
 export default [
