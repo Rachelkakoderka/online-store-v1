@@ -12,7 +12,7 @@ const Account = () => {
     console.log(isLoggedIn)
 
     return (
-        <div className="account__page">
+        <div className="page__container">
             { 
             isLoggedIn ?
              <AccDetails /> :

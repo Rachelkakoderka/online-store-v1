@@ -45,10 +45,11 @@ const Cart = () => {
    
 
     return (
-        <div className="cart__container">
+        <div className="page__container">
             <div className="cart__elements">
                 { cart.length > 0 ?
                 <>
+                    <h3 className="page__description">Twój koszyk:</h3>
                     <div>
                        {cartItemElems}
                     </div>
@@ -68,7 +69,7 @@ const Cart = () => {
                     <p>
                         {cartDefaultText}
                     </p>
-                    {/* <button className="btn"> Zobacz nasze produkty</button> */}
+                    
                 </div> 
                 }
                 

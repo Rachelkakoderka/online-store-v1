@@ -21,9 +21,9 @@ export default function CartItem(props : Props) {
   const dispatch = useDispatch()
 
   const deleteIcon = isHovered ? 
-    <span onClick={() =>dispatch(removeFromCart(id))}><RiDeleteBin6Fill className='cart__item_delete'/></span>
+    <span onClick={() =>dispatch(removeFromCart(id))}><RiDeleteBin6Fill className='icon'/></span>
     : 
-    <span onClick={() =>dispatch(removeFromCart(id))}><RiDeleteBin6Line className='cart__item_delete'/></span>
+    <span onClick={() =>dispatch(removeFromCart(id))}><RiDeleteBin6Line className='icon'/></span>
 
     const heartIcon = isHovered ? 
     <span onClick={() => dispatch(removeFromFavorite(id))}>
@@ -44,7 +44,10 @@ export default function CartItem(props : Props) {
         </div>
         <p className='cart__item__title'>{cartItem?.title}</p>
       </div>
-      <p>{cartItem?.price} {cartItem?.currency}</p>
+      <div className='cart__item__price__box'>
+        <p>{cartItem?.price}</p> 
+        <p>{cartItem?.currency}</p>
+      </div>
     </div>
   )
 }
