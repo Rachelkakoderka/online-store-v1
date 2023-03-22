@@ -246,6 +246,10 @@ padding-inline: 2rem;
 
 .page__description{
   padding: 1em;
+  text-align: left;
+ }
+ .page__container {
+  padding: 1em;
  }
 
 .cart__item {
@@ -276,11 +280,13 @@ padding-inline: 2rem;
 .cart__item__details {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items:center;
   justify-content: space-around;
 }
 .cart__item__title {
+  align-items: center;
   margin-left: 1em;
+  text-align: left;
 }
 .cart__total {
   margin-block: 0.5em;
@@ -387,5 +393,10 @@ padding-inline: 2rem;
   }
   header h1 {
     font-size: 2em;
+  }
+
+  .cart__item__title {
+    margin-left: .2em;
+    padding-right: .4em;
   }
 }
