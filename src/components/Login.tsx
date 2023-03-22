@@ -17,9 +17,9 @@ const Login = () => {
                     type="text" 
                     placeholder="Wpisz swój login" 
                     name="login" 
-                    required 
                     onChange={(e) => dispatch(addLogin(e.target.value))}
                     value={login}
+                    required 
                     />
             </div>
             
@@ -29,10 +29,9 @@ const Login = () => {
                     type="password" 
                     placeholder="Wpisz swoje hasło" 
                     name="password" 
-                    required
                     onChange={(e) => dispatch(addPassword(e.target.value))}
                     value={password}
-                    
+                    required 
                     />
             </div>
             
